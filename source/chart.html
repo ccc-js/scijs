@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="../web/c3.css" rel="stylesheet"/>
+	<link href="../web/vis.css" rel="stylesheet"/>
+  <style>
+  .container { width:100%; }
+  .chart { border: 2px solid #aaaaaa; border-radius: 5px; display: inline-block; }
+  .smallChart { width:32%; height:30vh;  }
+  .bigChart { width:98%; height:80vh;  }
+  button { padding:10px; background-color: #008CBA; border: none; color: white }
+  </style>
+</head>
+<body>
+  <div id="smallContainer" class="container">
+    <div id="chart1" class="chart smallChart">1</div>
+    <div id="chart2" class="chart smallChart">2</div>
+    <div id="chart3" class="chart smallChart">3</div>
+    <div id="chart4" class="chart smallChart">4</div>
+    <div id="chart5" class="chart smallChart">5</div>
+    <div id="chart6" class="chart smallChart">6</div>
+    <div id="chart7" class="chart smallChart">7</div>
+    <div id="chart8" class="chart smallChart">8</div>
+    <div id="chart9" class="chart smallChart">9</div>
+  </div>
+  <div id="bigContainer" class="container" style="display:none">
+    <div id="bigChart" class="chart bigChart"></div>
+    <button id="buttonShowGrid">Back (to 3*3 Grid)</button>
+  </div>
+  <script src="c6.js"></script>
+  <script>
+    c6.disableModule()
+  </script>
+  <script src="../web/d3.js"></script>
+  <script src="../web/c3.js"></script>
+  <script src="../web/vis.js"></script>
+  <script>
+    c6.init()
+    if (c6.isElectronRenderer()) {
+      c6.runScript(3)
+    } else {
+      eval(`
+      c6.chart2D('#chart7', (g) => c6.pie(g, {A: 30, B: 40, C: 20, D: 10}))
+      c6.drawCanvas('#chart8', function (ctx, canvas) {})
+      /*      
+      c6.chart2D('#chart8', (g) => c6.timeSeries(g, [
+        ['x', '2013-01-01','2013-01-02','2013-01-03','2013-01-04','2013-01-05'],
+        ['data1',       30,         200,         100,         400,         150],
+        ['data2',      130,         340,         200,         500,         250]
+      ]))
+      */
+      c6.chart3D('#chart9', 'surface', function (x, y) {
+        return (Math.sin(x / 50) * Math.cos(y / 50) * 50 + 50)
+      })
+      c6.view()
+      `)
+    }
+    c6.enableModule()
+  </script>
+</body>
+</html>

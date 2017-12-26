@@ -1,0 +1,23 @@
+{
+  "name": "scijs",
+  "version": "0.7.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "dependencies": {
+    "c6": "^0.1.0",
+    "j6": "^1.0.2"
+  },
+  "bin": {
+    "scijs": "scijs.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ccckmit/scijs.git"
+  },
+  "author": {
+    "name": "Chung-Chen Chen",
+    "email": "ccckmit@gmail.com"
+  },
+  "license": "MIT"
+}
