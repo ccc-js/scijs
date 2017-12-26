@@ -1,9 +1,6 @@
-# Scijs -- A Scientific Chart GUI for based on Electron/node.js
+# Scijs -- A Scientific Chart Library based on Electron.js
 
 ## Install
-
-1. Make sure you have install Electron.js in global mode.
-2. npm install this project in global mode.
 
 ```
 $ npm install -g electron
@@ -13,9 +10,8 @@ $ npm install -g scijs
 ## Run
 
 ```
-$ scijs <file>
+$ scijs <file.js>
 ```
-
 
 ## Example : ChartDemo
 
